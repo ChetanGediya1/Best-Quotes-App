@@ -28,32 +28,29 @@ public class MainActivity extends AppCompatActivity {
         btnRes=(Button) findViewById(R.id.btnRes);
         btnReset=(Button) findViewById(R.id.btnReset);
 
-        btnRes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String strweg = edWeg.getText().toString();
-                String strhei = edHei.getText().toString();
+        btnRes.setOnClickListener(v -> {
+            String strweg = edWeg.getText().toString();
+            String strhei = edHei.getText().toString();
 
-                if (strweg.equals("")){
-                    edWeg.setError("Please Enter Your Weight");
-                    edWeg.requestFocus();
-                    return;
-                }
-
-                if (strhei.equals("")) {
-                    edHei.setError("Please Enter Your Height");
-                    edHei.requestFocus();
-                    return;
-                }
-                float weight = Float.parseFloat(strweg);
-                float height= Float.parseFloat(strhei)/100;
-
-                float bmiVlaue = BMICalculate(weight,height);
-
-                txtInter.setText(interpreteBMI(bmiVlaue));
-                txtRes.setText("BMI= "+bmiVlaue);
-
+            if (strweg.equals("")){
+                edWeg.setError("Please Enter Your Weight");
+                edWeg.requestFocus();
+                return;
             }
+
+            if (strhei.equals("")) {
+                edHei.setError("Please Enter Your Height");
+                edHei.requestFocus();
+                return;
+            }
+            float weight = Float.parseFloat(strweg);
+            float height= Float.parseFloat(strhei)/100;
+
+            float bmiVlaue = BMICalculate(weight,height);
+
+            txtInter.setText(interpreteBMI(bmiVlaue));
+            txtRes.setText("BMI= "+bmiVlaue);
+
         });
         btnReset.setOnClickListener(new View.OnClickListener() {
             @Override
