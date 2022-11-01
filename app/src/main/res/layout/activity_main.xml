@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:text="BMI CALCULATOR"
         android:textSize="45dp"
-        android:textColor="@color/black"
+        android:textColor="#000000"
         android:textStyle="bold">
 
     </TextView>
